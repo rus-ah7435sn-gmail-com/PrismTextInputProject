@@ -1,0 +1,11 @@
+<UserControl x:Class="PrismTextInputProject.Views.TextFieldView3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <Border Background="LightYellow" Padding="5">
+        <TextBox Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 IsReadOnly="True"
+                 GotFocus="TextBox_GotFocus"/>
+    </Border>
+</UserControl>
