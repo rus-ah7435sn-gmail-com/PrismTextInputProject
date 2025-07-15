@@ -1,6 +1,6 @@
 using System.Windows;
 
-namespace PrismTextInputProject.Views
+namespace PrismTextInputProject
 {
     public partial class MainWindow : Window
     {

@@ -1,4 +1,4 @@
-<Window x:Class="PrismTextInputProject.Views.MainWindow"
+<Window x:Class="PrismTextInputProject.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
@@ -24,8 +24,6 @@
             <ContentControl prism:RegionManager.RegionName="RegionTextField4" Grid.Row="1" Grid.Column="1"/>
         </Grid>
 
-        <ContentControl prism:RegionManager.RegionName="RegionTextInput"
-                        Grid.Row="1" Grid.ColumnSpan="2"
-                        VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <ContentControl prism:RegionManager.RegionName="RegionTextInput" Grid.Row="2"/>
     </Grid>
 </Window>
