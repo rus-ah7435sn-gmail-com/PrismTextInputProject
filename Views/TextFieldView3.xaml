@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:prism="http://prismlibrary.com/"
     prism:ViewModelLocator.AutoWireViewModel="True">
-    <Border Background="LightYellow" Padding="5">
+    <Border Padding="5">
         <TextBox Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                  IsReadOnly="True"
                  GotFocus="TextBox_GotFocus"/>

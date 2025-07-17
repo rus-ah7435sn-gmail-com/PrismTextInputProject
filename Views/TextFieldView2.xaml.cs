@@ -1,5 +1,6 @@
-using System.Windows.Controls;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace PrismTextInputProject.Views
 {
@@ -12,7 +13,15 @@ namespace PrismTextInputProject.Views
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SharedFocusManager.LastFocusedField = "TextFieldView2";
+            if (SharedFocusManager.LastFocusedField != null)
+            {
+                SharedFocusManager.LastFocusedField.ClearValue(Control.BackgroundProperty);
+            }
+            var currentTextBox = sender as TextBox;
+            currentTextBox.Background = Brushes.LightGreen;
+            SharedFocusManager.LastFocusedField = currentTextBox;
+
+            SharedFocusManager.OnFocusChanged();
         }
     }
 }

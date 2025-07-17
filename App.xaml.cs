@@ -1,7 +1,9 @@
 using System.Windows;
 using Prism.Ioc;
+using Prism.Mvvm;
 using Prism.Navigation.Regions;
 using Prism.Unity;
+using PrismTextInputProject.ViewModels;
 using PrismTextInputProject.Views;
 
 namespace PrismTextInputProject
@@ -20,6 +22,7 @@ namespace PrismTextInputProject
             containerRegistry.RegisterForNavigation<TextFieldView3>();
             containerRegistry.RegisterForNavigation<TextFieldView4>();
             containerRegistry.RegisterForNavigation<TextInputView>();
+            ViewModelLocationProvider.Register<MainWindow, MainWindowViewModel>();
         }
         protected override void OnInitialized()
         {

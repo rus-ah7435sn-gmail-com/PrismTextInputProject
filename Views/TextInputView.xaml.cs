@@ -12,7 +12,6 @@ namespace PrismTextInputProject.Views
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            SharedFocusManager.LastFocusedField = "TextInputView";
         }
     }
 }

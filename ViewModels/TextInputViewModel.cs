@@ -1,4 +1,6 @@
+using System.Windows;
 using Prism.Mvvm;
+using PrismTextInputProject.Views;
 
 namespace PrismTextInputProject.ViewModels
 {
@@ -11,8 +13,11 @@ namespace PrismTextInputProject.ViewModels
             set
             {
                 SetProperty(ref _inputText, value);
-                if (!string.IsNullOrEmpty(SharedFocusManager.LastFocusedField) &&
-                    SharedFocusManager.LastFocusedField != nameof(TextInputViewModel))
+                if (SharedFocusManager.LastFocusedField == null)
+                {
+                    SharedTextStore.UpdateMainWindowTitle(null, value);
+                }
+                else
                 {
                     SharedTextStore.UpdateText(SharedFocusManager.LastFocusedField, value);
                 }
@@ -21,7 +26,10 @@ namespace PrismTextInputProject.ViewModels
 
         public TextInputViewModel()
         {
-            _inputText = "";
+            SharedFocusManager.FocusChanged += () =>
+            {
+                Text = string.Empty;
+            };
         }
     }
 }
